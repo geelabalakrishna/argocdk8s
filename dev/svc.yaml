@@ -10,5 +10,5 @@ spec:
   ports:
   - name: http
     port: 80          # Service port
-    targetPort: 80    # Container port
+    targetPort: 8080    # Container port
     # nodePort: 30080 # (optional) let Kubernetes auto-assign if not specified
