@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: argocd-deployment
   namespace: default
   labels:
     app: nginx
@@ -9,7 +9,7 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: nginx
+      app: argocd
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -21,7 +21,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
+      - name: argocd
         image: argoproj/rollouts-demo:red
         ports:
         - containerPort: 8080
